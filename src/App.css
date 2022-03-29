@@ -1,38 +1,89 @@
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Varela+Round&display=swap');
+
+/* COLORS */
+:root{
+  --blue: #82DEE8;
+  --green: #8EE5B3;
+  --tan: #FAF2E8;
+  --yellow: #FBC639;
+  --brown: #B1743E;
+}
+
+html,
+body,
+#root {
+  background-color: var(--tan);
+  height: 100%;
+  font-family: Abel;
+}
+
 .App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo{
+  margin-right: 10px;
+}
+
+.navbar, .navbar-toggler{
+  background-color: var(--brown) !important;
+}
+
+.body {
+  margin-top: 20%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px 10px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "a1 stuff a2"
+    "a3 stuff a4";
+  align-items: center;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.stuff {
+  grid-area: stuff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.stuff img {
+  border-radius: 5%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.a1 { 
+  grid-area: a1;
 }
 
-.App-link {
-  color: #61dafb;
+.a2 {
+  grid-area: a2;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.a3 {
+  grid-area: a3;
+}
+
+.a4 {
+  grid-area: a4;
+}
+
+.a1 .btn, .a2 .btn, .a3 .btn, .a4 .btn{
+  font-size: 32px;
+  padding: 30px 60px;
+}
+
+.island-img{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.responsive {
+  max-width: 100%;
+  height: auto;
 }
